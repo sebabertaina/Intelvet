@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
 import pandas as pd
-import matplotlib.pyplot as plt
+
 
 # Cargar los cursos predefinidos (como variable)
 if "cursos_data" not in st.session_state:
@@ -227,27 +227,6 @@ df_flujo = pd.DataFrame(datos_flujo)
 st.header("Tabla de Flujo de Caja")
 st.dataframe(df_flujo)
 
-# Graficar los resultados
-st.header("Gráficos de Flujo de Caja")
 
-# Gráfico de ingresos vs costos
-fig, ax = plt.subplots(figsize=(10, 6))
-ax.plot(df_flujo["Mes"], df_flujo["Ingresos"], label="Ingresos", marker='o')
-ax.plot(df_flujo["Mes"], df_flujo["Costos Variables"], label="Costos Variables", marker='o')
-ax.plot(df_flujo["Mes"], df_flujo["Costos Fijos"], label="Costos Fijos", marker='o')
-ax.set_xlabel("Mes")
-ax.set_ylabel("Monto en USD")
-ax.set_title("Ingresos y Costos por Mes")
-ax.legend()
 
-st.pyplot(fig)
 
-# Gráfico de resultados acumulados
-fig2, ax2 = plt.subplots(figsize=(10, 6))
-ax2.plot(df_flujo["Mes"], df_flujo["Resultado Acumulado"], label="Resultado Acumulado", color="green", marker='o')
-ax2.set_xlabel("Mes")
-ax2.set_ylabel("Monto en USD")
-ax2.set_title("Resultado Acumulado por Mes")
-ax2.legend()
-
-st.pyplot(fig2)
