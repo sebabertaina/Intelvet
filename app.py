@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Cargar el logo de Intelvet
-st.sidebar.image("Intelvet.png", use_column_width=True)
+
 
 st.title("Intelvet - Análisis de Sensibilidad de Flujo de Fondos")
 
