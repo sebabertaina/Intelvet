@@ -1,4 +1,4 @@
 streamlit==1.15.0
 pandas==1.4.3
-matplotlib
+matplotlib==3.4.3
 
